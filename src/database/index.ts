@@ -1,13 +1,16 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
 
-const AppDataSource = new DataSource({
+import { CreateCategories1662575549333 } from "./migrations/1662575549333-CreateCategories";
+
+export const AppDataSource = new DataSource({
   type: "postgres",
   port: 5432,
   host: "localhost",
   username: "docker",
   password: "ignite",
   database: "rentx",
+  migrations: [CreateCategories1662575549333],
 });
 
 AppDataSource.initialize()
