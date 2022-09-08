@@ -9,7 +9,7 @@ import { CreateSpecifications1662605988388 } from "./migrations/1662605988388-Cr
 export const AppDataSource = new DataSource({
   type: "postgres",
   port: 5432,
-  host: "database",
+  host: "localhost",
   username: "docker",
   password: "ignite",
   database: "rentx",
