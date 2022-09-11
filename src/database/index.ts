@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
 
+import { User } from "../modules/accounts/entities/User";
 import { Category } from "../modules/cars/entities/Category";
 import { Specification } from "../modules/cars/entities/Specification";
 import { CreateCategories1662575549333 } from "./migrations/1662575549333-CreateCategories";
@@ -10,11 +11,11 @@ import { CreateUsers1662689908852 } from "./migrations/1662689908852-CreateUsers
 export const AppDataSource = new DataSource({
   type: "postgres",
   port: 5432,
-  host: "localhost",
+  host: "database_rentalx",
   username: "docker",
   password: "ignite",
   database: "rentx",
-  entities: [Category, Specification],
+  entities: [Category, Specification, User],
   migrations: [
     CreateCategories1662575549333,
     CreateSpecifications1662605988388,

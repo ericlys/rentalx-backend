@@ -1,9 +1,9 @@
 version: '3.7'
 
 services: 
-  database:
+  database_rentalx:
     image: postgres
-    container_name: database_ignite
+    container_name: database_rentalx
     restart: always
     ports:
       - 5432:5432
@@ -23,9 +23,9 @@ services:
     volumes:
       - .:/usr/app
     links: 
-      - database
+      - database_rentalx
     depends_on:
-      - database
+      - database_rentalx
 
 volumes:
   pgdata:
