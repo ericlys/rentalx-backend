@@ -19,7 +19,7 @@ interface IResponse {
 }
 
 @injectable()
-class AutenticateUserUseCase {
+class AuthenticateUserUseCase {
   constructor(
     @inject("UsersRepository")
     private usersRepository: IUsersRespository
@@ -53,4 +53,4 @@ class AutenticateUserUseCase {
   }
 }
 
-export { AutenticateUserUseCase };
+export { AuthenticateUserUseCase };
