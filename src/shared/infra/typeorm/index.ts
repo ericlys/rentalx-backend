@@ -15,7 +15,7 @@ export const dataSource = new DataSource({
   migrations: ["src/shared/infra/typeorm/migrations/*.ts"],
 });
 
-export function createConnection(
+export async function createConnection(
   host = "database_rentalx"
 ): Promise<DataSource> {
   return dataSource
