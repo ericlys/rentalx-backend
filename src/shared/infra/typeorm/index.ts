@@ -10,7 +10,7 @@ export const dataSource = new DataSource({
   host: "localhost",
   username: "docker",
   password: "ignite",
-  database: "rentx",
+  database: process.env.NODE_ENV === "test" ? "rentx_test" : "rentx",
   entities: ["src/modules/**/entities/*.ts"],
   migrations: ["src/shared/infra/typeorm/migrations/*.ts"],
 });
