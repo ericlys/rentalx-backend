@@ -16,7 +16,7 @@ export const dataSource = new DataSource({
 });
 
 export async function createConnection(
-  host = "database_rentalx"
+  host = process.env.NODE_ENV === "test" ? "localhost" : "database_rentalx"
 ): Promise<DataSource> {
   return dataSource
     .setOptions({
