@@ -35,7 +35,7 @@ describe("List Category Controller", () => {
 
     const { token } = responseToken.body;
 
-    const r = await request(app)
+    await request(app)
       .post("/categories")
       .send({
         name: "Category Supertest",
