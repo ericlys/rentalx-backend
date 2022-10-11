@@ -13,7 +13,7 @@ class UsersRepository implements IUsersRespository {
     this.repository = dataSource.getRepository(User);
   }
 
-  async crete({
+  async create({
     name,
     email,
     driver_license,

@@ -5,7 +5,7 @@ import { IUsersRespository } from "../IUsersRespository";
 class UsersRepositoryInMemory implements IUsersRespository {
   users: User[] = [];
 
-  async crete({
+  async create({
     driver_license,
     email,
     name,

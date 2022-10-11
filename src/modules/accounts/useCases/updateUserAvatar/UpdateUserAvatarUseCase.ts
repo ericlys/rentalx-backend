@@ -24,7 +24,7 @@ class UpdateUserAvatarUseCase {
 
     user.avatar = avatar_file;
 
-    await this.usersRepository.crete(user);
+    await this.usersRepository.create(user);
   }
 }
 
