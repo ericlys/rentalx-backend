@@ -15,8 +15,10 @@ export const dataSource = new DataSource({
     process.env.NODE_ENV === "test"
       ? process.env.DB_DATABASE_TEST
       : process.env.DB_DATABASE,
-  entities: ["src/modules/**/entities/*.ts"],
-  migrations: ["src/shared/infra/typeorm/migrations/*.ts"],
+  // .js - build
+  // .ts - in development
+  entities: ["src/modules/**/entities/*.js"],
+  migrations: ["src/shared/infra/typeorm/migrations/*.js"],
 });
 
 export async function createConnection(host): Promise<DataSource> {
