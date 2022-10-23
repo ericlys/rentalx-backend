@@ -21,7 +21,9 @@ export const dataSource = new DataSource({
   migrations: ["src/shared/infra/typeorm/migrations/*.js"],
 });
 
-export async function createConnection(host): Promise<DataSource> {
+export async function createConnection(
+  host = process.env.DB_HOST
+): Promise<DataSource> {
   return dataSource
     .setOptions({
       host,
