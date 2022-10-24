@@ -1,4 +1,5 @@
 import "reflect-metadata";
+import "dotenv/config";
 import { DataSource } from "typeorm";
 // yarn typeorm -d src/database/index.ts migration:run
 // yarn typeorm -d src/shared/infra/typeorm/index.ts migration:run
