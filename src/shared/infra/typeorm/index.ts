@@ -5,6 +5,7 @@ import { DataSource } from "typeorm";
 // yarn typeorm -d src/shared/infra/typeorm/index.ts migration:run
 // yarn typeorm migration:create src/database/migrations/{name}
 // yarn typeorm migration:create src/shared/infra/typeorm/migrations/CreateCars
+console.log(process.env.TYPEORM_ENTITIES);
 export const dataSource = new DataSource({
   type: "postgres",
   port: Number(process.env.DB_PORT),
@@ -16,10 +17,8 @@ export const dataSource = new DataSource({
     process.env.NODE_ENV === "test"
       ? process.env.DB_DATABASE_TEST
       : process.env.DB_DATABASE,
-  // .js - build
-  // .ts - in development
-  entities: ["src/modules/**/entities/*.js"],
-  migrations: ["src/shared/infra/typeorm/migrations/*.js"],
+  entities: [process.env.TYPEORM_ENTITIES],
+  migrations: [process.env.TYPEORM_MIGRATIONS],
 });
 
 export async function createConnection(
