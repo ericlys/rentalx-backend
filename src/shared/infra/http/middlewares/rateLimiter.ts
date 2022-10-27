@@ -9,7 +9,6 @@ const redisClient = redis.createClient({
   socket: {
     host: process.env.REDIS_HOST,
     port: Number(process.env.REDIS_PORT),
-    sessionTimeout: 20,
   },
 });
 
